@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "git": { "deploymentEnabled": false },
-  "buildCommand": "exit 1"
+  "framework": "nextjs",
+  "installCommand": "npm ci",
+  "buildCommand": "node scripts/preview-build.mjs",
+  "git": {
+    "deploymentEnabled": {
+      "preview/regular-ai-guy": true,
+      "main": false,
+      "*": false
+    }
+  }
 }
