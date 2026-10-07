@@ -105,3 +105,21 @@ test("work guide leads with accomplishing a goal rather than beginner benchmarki
     /Record the time|short record of mistakes|test again|review checklist|judge the time|measure whether/i,
   );
 });
+
+test("beginner entry points center everyday outcomes without homework", async () => {
+  const prompt = await readFile("src/components/prompt-lab.tsx", "utf8");
+  assert.match(prompt, /five family dinners/);
+  assert.match(prompt, /budget of \$100/);
+  assert.match(prompt, /kids’ activities/);
+  assert.match(prompt, /affordable weekend/);
+  assert.match(prompt, /confusing letter/);
+  assert.match(prompt, /Example requests only/);
+  const first = getGuide("first-useful-prompt");
+  assert.equal(first.title, "Just tell AI what you need");
+  const body = JSON.stringify(first);
+  assert.doesNotMatch(
+    body,
+    /check every line|five or ten minutes|review checklist|short record of mistakes|test again/i,
+  );
+  assert.match(body, /Ask me what you need to know/);
+});

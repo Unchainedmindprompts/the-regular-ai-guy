@@ -852,6 +852,7 @@ p {
 }
 .prompt-options {
   display: flex;
+  flex-wrap: wrap;
   gap: 7px;
   padding-top: 22px;
 }

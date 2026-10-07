@@ -2,10 +2,32 @@ export const site = {
   name: "The Regular AI Guy",
   url: "https://theregularaiguy.com",
   description:
-    "AI for work, home, and everything in between. A practical podcast in the making with Mark Abplanalp, plus plain-language guides you can use today.",
+    "An upcoming podcast with Mark Abplanalp about using AI in everyday life. Meals, busy weeks, paperwork, trips, and work.",
   host: "Mark Abplanalp",
 };
 export const topicGroups = [
+  {
+    id: "life",
+    name: "Everyday life",
+    icon: "home",
+    description:
+      "Dinner, a packed week, or something you just want sorted out.",
+    guide: "first-useful-prompt",
+    ideas: [
+      {
+        title: "What could AI take off your plate?",
+        detail:
+          "Everyday requests, from dinner plans to making sense of a confusing letter.",
+        tag: "Everyday help",
+      },
+      {
+        title: "Can AI help with a busy week?",
+        detail:
+          "Family plans, appointments, and figuring out what needs to happen next.",
+        tag: "Getting organized",
+      },
+    ],
+  },
   {
     id: "work",
     name: "Work & business",
@@ -24,28 +46,6 @@ export const topicGroups = [
         detail:
           "What it takes to build with AI, where it helps, and where your judgment matters.",
         tag: "Building with AI",
-      },
-    ],
-  },
-  {
-    id: "life",
-    name: "Everyday life",
-    icon: "home",
-    description:
-      "A little help with the things that happen outside the workday.",
-    guide: "first-useful-prompt",
-    ideas: [
-      {
-        title: "What should I actually ask this thing?",
-        detail:
-          "A useful first conversation, starting with something already on your to-do list.",
-        tag: "Getting started",
-      },
-      {
-        title: "Could a personal AI agent help at home?",
-        detail:
-          "What you might hand off, what needs your say-so, and how to stay in control.",
-        tag: "Personal agents",
       },
     ],
   },

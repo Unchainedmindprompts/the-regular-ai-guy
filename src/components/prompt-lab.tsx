@@ -4,21 +4,27 @@ import { Check, Copy, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 const samples = [
   {
-    label: "At work",
+    label: "Dinner plans",
     prompt:
-      "Help me turn these rough job notes into a clear customer update. Use a friendly, direct tone. Keep it under 100 words. Don’t invent dates, prices, or promises. If a detail is missing, ask me.\n\nMy notes: [add a non-sensitive example here]",
+      "Help me plan five family dinners and make a grocery list for a budget of $100. Ask how many people I’m feeding, any food preferences, and what I already have. Use estimated prices and keep the plan simple.",
   },
   {
-    label: "At home",
+    label: "A busy week",
     prompt:
-      "Help me make a realistic weekend project checklist for [describe a simple project]. I have [time available] and [supplies I already own]. Break it into small steps and flag anything that needs an expert. Ask me up to three questions before making the plan.",
+      "Help me organize next week’s family schedule. I need to fit in the kids’ activities, appointments, and the usual routines. Ask me for the details, then make a simple plan I can use.",
   },
   {
-    label: "Something new",
+    label: "The weekend",
     prompt:
-      "Explain [a topic I want to understand] in everyday language. Start with the basic idea, give me one concrete example, and explain any unfamiliar terms. Tell me where your answer may be uncertain and what I should verify.",
+      "Help me plan an affordable weekend. Ask where I’ll be, who’s coming, what we enjoy, and what I’d like to spend. Suggest a simple plan and flag any prices or opening hours I should confirm.",
+  },
+  {
+    label: "A confusing letter",
+    prompt:
+      "Help me understand this confusing letter. Explain what it says in everyday language and suggest the next steps. Point out any deadline or detail I should confirm. I’ll paste the letter with private details removed.",
   },
 ];
+
 export function PromptLab() {
   const [selected, setSelected] = useState(0);
   const [copied, setCopied] = useState(false);
@@ -44,30 +50,22 @@ export function PromptLab() {
   return (
     <div className="prompt-lab" id="first-prompt">
       <div className="prompt-context">
-        <span className="eyebrow">A SMALL PLACE TO START</span>
+        <span className="eyebrow">START WITH SOMETHING REAL</span>
         <h2>
           You don’t need to know how to build the solution, just ask the right
           questions.
         </h2>
         <p>
-          You don’t need the perfect prompt. Start with a real task, add a few
-          details, and keep the final say.
+          Pick an example, copy it into an AI tool, and make it yours. You can
+          just talk normally.
         </p>
         <Link className="text-link" href="/guides/first-useful-prompt">
-          The guide to your first useful prompt <ArrowUpRight size={19} />
+          A quick guide to asking for help <ArrowUpRight size={19} />
         </Link>
-        <div className="prompt-reminder">
-          <span>THE REGULAR REMINDER</span>
-          <p>
-            Leave private details out.
-            <br />
-            Check the answer before you use it.
-          </p>
-        </div>
       </div>
       <div className="prompt-paper">
         <div className="prompt-paper-header">
-          <span>YOUR FIRST EXPERIMENT</span>
+          <span>EXAMPLE REQUESTS</span>
           <span aria-hidden="true">↗</span>
         </div>
         <div className="prompt-options" aria-label="Choose a prompt example">
@@ -92,9 +90,9 @@ export function PromptLab() {
         </p>
         <div className="prompt-actions">
           <span>
-            Fill in the brackets.
+            Make it yours.
             <br />
-            Paste into your AI tool of choice.
+            Paste it into your AI tool.
           </span>
           <button className="button button-dark" onClick={copy} type="button">
             {copied ? <Check size={17} /> : <Copy size={17} />}{" "}
@@ -114,7 +112,7 @@ export function PromptLab() {
           </p>
         )}
         <p className="local-note">
-          Just a template. Nothing you do here is sent to an AI.
+          Example requests only. This page isn’t connected to an AI service.
         </p>
       </div>
     </div>

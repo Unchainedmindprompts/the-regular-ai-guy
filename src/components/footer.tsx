@@ -13,7 +13,7 @@ export function Footer() {
                 <span className="wordmark-sub">WITH MARK ABPLANALP</span>
               </span>
             </Link>
-            <p>A little curiosity goes a long way.</p>
+            <p>A podcast about using AI in everyday life.</p>
           </div>
           <div className="footer-links">
             <Link href="/start-here">
@@ -29,15 +29,12 @@ export function Footer() {
           <div className="footer-status">
             <span className="status-dot" /> PODCAST IN THE MAKING
             <p>
-              Good conversations are on the way.
-              <br />
-              Useful ideas are already here.
+              Episodes and listening links will be added when they’re ready.
             </p>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} The Regular AI Guy</span>
-          <span>Curiosity welcome. Jargon optional.</span>
           <Link href="/privacy">Privacy</Link>
         </div>
       </div>

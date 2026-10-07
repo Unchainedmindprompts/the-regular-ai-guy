@@ -42,16 +42,16 @@ for (const viewport of [
   await page.getByRole("tab", { name: "Everyday life" }).click();
   assert.match(
     await page.getByRole("tabpanel").innerText(),
-    /What should I actually ask/,
+    /What could AI take off your plate/,
   );
   await page.getByRole("tab", { name: "Everyday life" }).press("ArrowRight");
   assert.equal(
     await page
-      .getByRole("tab", { name: "AI explained" })
+      .getByRole("tab", { name: "Work & business" })
       .getAttribute("aria-selected"),
     "true",
   );
-  await page.getByRole("tab", { name: "AI explained" }).press("End");
+  await page.getByRole("tab", { name: "Work & business" }).press("End");
   assert.equal(
     await page
       .getByRole("tab", { name: "Risks & reality" })
@@ -61,11 +61,11 @@ for (const viewport of [
   await page.getByRole("tab", { name: "Risks & reality" }).press("Home");
   assert.equal(
     await page
-      .getByRole("tab", { name: "Work & business" })
+      .getByRole("tab", { name: "Everyday life" })
       .getAttribute("aria-selected"),
     "true",
   );
-  await page.getByRole("button", { name: "At home", exact: true }).click();
+  await page.getByRole("button", { name: "A busy week", exact: true }).click();
   await page.getByRole("button", { name: "Copy prompt", exact: true }).click();
   assert.equal(
     await page.getByRole("button", { name: "Copied", exact: true }).count(),
@@ -73,10 +73,10 @@ for (const viewport of [
   );
   assert.match(
     await page.evaluate(() => navigator.clipboard.readText()),
-    /weekend project checklist/,
+    /family schedule/,
   );
   await page
-    .getByRole("button", { name: "Something new", exact: true })
+    .getByRole("button", { name: "A confusing letter", exact: true })
     .click();
   assert.equal(
     await page

@@ -9,7 +9,12 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { topicGroups } from "@/content/site";
-const icons = [BriefcaseBusiness, House, Lightbulb, ShieldCheck];
+const icons = {
+  tool: BriefcaseBusiness,
+  home: House,
+  bulb: Lightbulb,
+  shield: ShieldCheck,
+};
 export function TopicExplorer() {
   const [active, setActive] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -22,7 +27,7 @@ export function TopicExplorer() {
     <div className="topic-explorer">
       <div className="topic-tabs" role="tablist" aria-label="Explore AI topics">
         {topicGroups.map((group, i) => {
-          const Icon = icons[i];
+          const Icon = icons[group.icon];
           return (
             <button
               key={group.id}

@@ -16,51 +16,36 @@ export type Guide = {
 export const guides: Guide[] = [
   {
     slug: "first-useful-prompt",
-    title: "Your first useful prompt",
+    title: "Just tell AI what you need",
     eyebrow: "START HERE",
     summary:
-      "Pick one small task, explain what you need, and learn how to check the result. No special vocabulary required.",
-    readTime: "3 min read",
+      "Start with a real-life goal. You can figure out the details together.",
+    readTime: "2 min read",
     sections: [
       {
-        title: "Choose something you can judge",
+        title: "Start with what you want done",
         body: [
-          "Start with a task you already understand: shorten a message, organize a few notes, or turn a rough list into questions for a customer. Keep the first attempt small enough that you can check every line. A useful starting point is something that takes you five or ten minutes and has an obvious finish.",
-          "If you install shades, that might be a friendly appointment reminder based on details you provide. Your experience tells you whether it sounds right and whether it promises anything you cannot deliver. You bring the knowledge of the job; the tool helps arrange the words.",
+          "Maybe you want five family dinners and a grocery list within $100. Or help fitting the kids’ activities and appointments into next week. Or an affordable weekend plan. Start with the thing you want help with.",
+          "You can ask in the same words you’d use with a person: “Help me plan five dinners for my family and make the grocery list. I have $100 to spend.”",
         ],
       },
       {
-        title: "Give it a clear brief",
+        title: "Let it ask the next question",
         body: [
-          "A prompt is simply your request. Write it as if you were handing a small job to someone who has not heard the earlier conversation. OpenAI's prompting guidance recommends clear instructions, relevant context, and refining the request after reviewing the answer. Here is a practical way to do that:",
-        ],
-        bullets: [
-          "Task: Say exactly what you want it to do",
-          "Context: Explain who the result is for and the facts it needs",
-          "Constraints: Set limits, including what it must not invent",
-          "Format: Ask for a text message, short list, or another useful shape",
-          "Verify: Decide what you will check before using the result",
+          "You don’t need a perfect request or a plan for how to build the answer. If you’re not sure which details matter, add: “Ask me what you need to know.”",
+          "For dinner plans, that might mean how many people you’re feeding, what they like, and what’s already in the fridge. Answer a few questions and let it help put the plan together.",
         ],
       },
       {
-        title: "Try this fictional example",
+        title: "Make it work for you",
         body: [
-          "“Draft a text to [customer first name] about a shade measurement visit. The confirmed date is [date] and the arrival window is [time window]. Ask them to confirm someone will be available. Keep it friendly and under 60 words. Use only these details. Do not add prices, preparation instructions, or promises. Keep missing details in square brackets. Show me a draft only.”",
-          "A possible draft: “Hi [customer first name], a quick reminder about your shade measurement visit on [date], with arrival between [time window]. Can you confirm someone will be available? Thanks!”",
-          "These placeholders are intentional. Practice with fictional information first. For a real customer message, replace them yourself after reviewing the wording, and double-check the appointment against your actual calendar.",
-        ],
-      },
-      {
-        title: "Improve one thing at a time",
-        body: [
-          "If the draft is too formal, say, “Make it sound more conversational.” If it adds an unsupported detail, point to the detail and ask for a version using only your supplied facts. You can keep working in the same conversation rather than rebuilding the whole request.",
-          "Read the final result with three questions in mind: Is every fact correct? Is anything important missing? Would I actually say this? AI can sound certain while making mistakes, so a polished sentence still needs a check. For this example, verify the name, date, arrival window, and recipient before sending.",
-          "When a prompt works, save a clean version with placeholders. That gives you a repeatable starting point for the next similar task without keeping customer information in the template.",
+          "When you see the result, say what you’d like changed: “Make the dinners quicker.” “We already have pasta.” “Leave Friday open.” Keep talking until it fits your life.",
+          "The same idea works for a confusing letter: “Explain this in everyday language and help me work out what to do next.” Or a packed week: “Help me organize this so I know what needs to happen each day.”",
+          "Before acting, check the details that matter, like appointment times, deadlines, or prices. Leave private information out of the conversation.",
         ],
       },
     ],
-    takeaway:
-      "Try one small task today. Give it the facts, set the limits, and check the finished work yourself.",
+    takeaway: "Say what you want done. Let AI help with the details.",
     sourceLinks: [
       {
         label: "OpenAI: Prompting best practices",
@@ -81,29 +66,23 @@ export const guides: Guide[] = [
     readTime: "3 min read",
     sections: [
       {
-        title: "Look for the small repeat jobs",
+        title: "What would make your day easier?",
         body: [
-          "Think about the work between the work: turning rough notes into a tidy list, explaining the same process again, preparing questions for a supplier, or writing a clear customer update. Those jobs are often a good place to experiment because you already know what a useful result looks like.",
-          "Pick one job that comes up regularly. Write down what you start with, what you need at the end, and who checks it. For a small installation business, a simple trial could be turning fictional appointment notes into a next-step checklist. Keep technical specifications and installation decisions with the people qualified to verify them.",
+          "You might want customer updates written, job notes organized, or a simple way to track follow-ups. Choose the thing you keep putting off and tell AI what you want handled.",
+          "Describe what you already use and what you want at the end. Let the agent ask for anything else it needs.",
         ],
       },
       {
-        title: "Try a contained handoff",
+        title: "Ask for the result",
         body: [
-          "Here is a fictional example: “Organize these notes into three sections: confirmed details, questions still open, and next actions. Notes: customer wants light control in a west-facing office; fabric choice is undecided; measurements still need checking; customer asked whether a motor option is available. Do not choose a product, invent measurements, or mark anything as approved.”",
-          "A useful response would preserve the uncertainty. Fabric choice stays open. Measurements stay unverified. The motor question remains a question for the appropriate product source. If the answer silently turns a possibility into a decision, correct it before the checklist goes anywhere.",
-        ],
-        bullets: [
-          "Use one clear input and ask for one reviewable output",
-          "Keep confirmed facts separate from assumptions and open questions",
-          "Name the person responsible for checking the final result",
+          "For example: “Turn these rough job notes into a clear customer update. Ask me if anything important is missing. Keep it friendly and short.”",
+          "For a real job, confirm details such as measurements, product specifications, and appointment times before sending them to a customer.",
         ],
       },
       {
-        title: "Decide what information belongs in the tool",
+        title: "Keep customer information private",
         body: [
-          "Before using real work, check your company's rules and the privacy settings for the specific account. Different products, plans, and connected apps have different data controls. OpenAI's documentation, for example, distinguishes model-training settings from chat history and organizational controls. A privacy toggle is not permission to upload someone else's confidential information.",
-          "For an early test, replace names and addresses with placeholders. Leave out payment details, passwords, private employee information, and customer documents you are not authorized to share. Removing a name may still leave a person identifiable through an address, photo, or detailed description. Share only what the task genuinely needs.",
+          "Use information you’re allowed to share, check the app’s data settings, and leave out passwords, payment details, or private customer information the task doesn’t need.",
         ],
       },
       {
@@ -132,51 +111,35 @@ export const guides: Guide[] = [
   },
   {
     slug: "personal-agents",
-    title: "What a personal AI agent can do",
+    title: "What can an AI agent do?",
     eyebrow: "THE NEXT STEP",
-    summary:
-      "Understand tools, access, and approvals before letting an assistant take action on your behalf.",
-    readTime: "3 min read",
+    summary: "Some AI tools can help carry out a task. Here’s what to expect.",
+    readTime: "2 min read",
     sections: [
       {
-        title: "An assistant with tools",
+        title: "Ask for something you want done",
         body: [
-          "The word agent gets used loosely. In practical terms, an AI agent can use tools to work through a task: search for information, read a connected file, prepare a document, or interact with an app. Exactly what it can do depends on the product, its available tools, and the access you have granted.",
-          "Anthropic describes agents as systems that can decide how to use tools as a task develops. That ability can be useful when several steps depend on what the assistant finds. It also means there are more places for a mistake to happen. Start with a task whose progress and outcome you can inspect.",
+          "You might want a weekend plan, a document put together, or help organizing next week’s appointments. Some AI assistants can use connected apps and tools to help do the work. People often call these assistants “agents.”",
+          "What an agent can do depends on the product and the tools it has. You can start by asking: “Can you help me get this done? What do you need from me?”",
         ],
       },
       {
-        title: "Write down the boundaries",
+        title: "Find out how far it can take you",
         body: [
-          "A good first task has a clear finish and limited access. You might ask an agent to compare three public product pages and make a list of questions to ask a supplier. It can collect information while you remain responsible for deciding whether the products fit the job.",
-          "Try: “Compare these three product pages using only the specifications they publish. Show source links and flag missing information. Prepare a short comparison for my review. Do not contact suppliers, create accounts, place orders, or change any files.”",
-          "For tasks that do involve changes, specify exactly what may change and what needs your approval. Check the tool's permission settings as well as writing instructions. A sentence in a prompt does not replace an actual access control.",
-        ],
-        bullets: [
-          "Goal: What finished result do you want to inspect?",
-          "Access: Which files, apps, or websites does this task need?",
-          "Approval: Which actions must wait for your review?",
-          "Stop point: When should it pause or hand the task back?",
+          "For example: “Help me organize next week’s family schedule. Ask me for the details, then put together a plan I can use.” Once you have a plan, you could ask whether it can add the appointments to your calendar.",
+          "Some tools can make those changes after you connect an account and approve them. Others can give you a finished schedule to copy. If it can’t do a step directly, ask what useful part it can handle.",
         ],
       },
       {
-        title: "Give access gradually",
+        title: "You still choose what happens",
         body: [
-          "Begin with public information or a few safe sample files. If an app connection is needed, read what the permission screen allows. Access to view information and access to send messages or change records carry different consequences. Prefer the narrowest access that supports your task, and remove connections you no longer use.",
-          "Keep passwords and recovery codes out of ordinary chat messages. Use the product's supported sign-in process yourself. Pause if a workflow asks for unexpected access or takes you somewhere unrelated to the job.",
-        ],
-      },
-      {
-        title: "Supervise the work and verify the finish",
-        body: [
-          "Agents can misunderstand instructions, follow misleading material, or fail partway through. A page or email can even contain instructions intended to steer an agent away from your request, a risk called prompt injection. Product safeguards help, but they do not make every workflow safe to leave unattended.",
-          "For anything consequential, review the proposed action and its destination before approving it. Afterward, check the real result: open the document, inspect the changed record, or verify the confirmation in the relevant service. An assistant saying it is finished is a useful update, not independent proof.",
-          "If something looks wrong, stop the task before allowing more actions. Keep the original files, review what changed, and use the service's normal recovery options where available. Increase responsibility only after the smaller workflow proves dependable.",
+          "For things like sending a message, buying something, or changing an appointment, make clear that you want to approve it first. Read what an app connection allows before connecting it, and keep passwords out of ordinary chat.",
+          "When it says it’s finished, open the result. Does the schedule have the right dates? Did the document save where you expected? If something is off, say so and ask it to fix it. For important changes, check the confirmation in the actual app.",
         ],
       },
     ],
     takeaway:
-      "Give an agent a specific job, limited access, clear approval points, and a finish you can verify.",
+      "Ask for the finished thing you want. Find out what the tool can do, and keep the say-so on important actions.",
     sourceLinks: [
       {
         label: "Anthropic: How agents use tools and feedback",
@@ -190,51 +153,43 @@ export const guides: Guide[] = [
   },
   {
     slug: "risks-and-reality",
-    title: "Useful tools. Real limits.",
+    title: "A few things worth watching",
     eyebrow: "KEEP YOUR FEET ON THE GROUND",
     summary:
-      "Build a few practical habits around wrong answers, private information, and convincing scams.",
-    readTime: "3 min read",
+      "A few everyday ways to avoid mistakes and protect private information.",
+    readTime: "2 min read",
     sections: [
       {
-        title: "A confident answer still needs evidence",
+        title: "If the detail matters, check it",
         body: [
-          "AI can produce an answer that reads smoothly and contains a wrong date, an invented reference, or a detail that was never in your notes. NIST's generative AI risk profile describes this problem as confabulation. You may also hear it called hallucination. The important part is knowing that a convincing answer can still be incorrect.",
-          "Make the check fit the consequence. For a casual brainstorming list, a quick review may be enough. For a product specification, customer commitment, or published claim, check the original source. Open the linked page and look for the exact detail. Confirm the model number, units, date, and context rather than assuming a related-looking link proves the claim.",
+          "An AI answer can sound confident and still be wrong. Before you head out, check the opening hours. Before you rely on a deadline, look at the original letter. Before you send a customer a date or a price, make sure it’s right.",
+          "You don’t need to investigate every dinner suggestion. Put your attention on the details that would cause trouble if they were wrong.",
         ],
       },
       {
-        title: "Watch what goes into the conversation",
+        title: "Keep private details private",
         body: [
-          "Before pasting a document or uploading a screenshot, ask what information it contains and whether you have permission to share it with that service. A screenshot can expose customer names, account details, or something private in another part of the screen. Crop and remove unnecessary information before uploading.",
-          "Read the privacy guidance for your actual account and plan. Settings for model training, saved history, memory, and connected services can cover different things. For example, OpenAI says turning off model training does not remove saved chats. Avoid treating any single setting as a blanket guarantee of privacy.",
-          "Practice with made-up examples when possible. If the task needs confidential material, use an approved workplace process and the minimum information required. Keep passwords, recovery codes, and payment credentials out of chat prompts.",
+          "Leave passwords, account recovery codes, and payment details out of chat. Before pasting a letter or uploading a photo, remove private information the task doesn’t need.",
+          "Check the privacy settings for the tool you actually use. Products and account types handle information differently. If you’re using it at work, follow your workplace’s rules for customer and company information.",
         ],
       },
       {
-        title: "Verify unexpected requests independently",
+        title: "Be careful with surprise messages",
         body: [
-          "A polished message, familiar logo, or convincing recording is not enough to establish who is contacting you. Be especially cautious when a request creates urgency, demands secrecy, asks for a login code, or changes where a payment should go. You do not need to prove that AI created something before deciding to verify it.",
-          "The FTC recommends contacting a company through a phone number or website you already know is genuine. Use a saved contact, an existing account app, or a previously verified website. Do not use the callback number or login link supplied inside the suspicious message. For an unexpected request from someone you know, reach them through a separate, established channel.",
-          "An AI assistant may help explain a suspicious message, but its opinion cannot authenticate the sender. If you have already shared information or clicked something concerning, consult the FTC's official recovery guidance and the affected service's verified support channel promptly.",
+          "AI can help make fake messages and recordings convincing. If someone unexpectedly asks for money, a login code, or urgent action, check with them another way.",
+          "Use a phone number or website you already trust, rather than a link or callback number in the message. That’s the FTC’s advice, and it works whether AI was involved or not.",
         ],
       },
       {
-        title: "Keep a simple preflight check",
+        title: "If something looks wrong, say so",
         body: [
-          "Before using an AI result, pause for a short check. The goal is to catch the mistakes that would matter before they reach a customer, colleague, or public page. Build the habit while the tasks are small.",
-        ],
-        bullets: [
-          "Facts: Which claims did I verify against an original source?",
-          "Privacy: Did I share more information than this task needed?",
-          "Permissions: Am I authorized to use or send this material?",
-          "Consequence: What happens if this answer is wrong?",
-          "Recovery: Can I review or undo the next action?",
+          "Tell the AI what it missed and ask for a correction. For a meal plan or a rough draft, that may be all you need. If it is about to send, buy, or change something important, pause and check before going ahead.",
+          "Keep original files when you’re asking a tool to change them. If a change goes wrong, use the app’s normal undo or recovery options.",
         ],
       },
     ],
     takeaway:
-      "Check important claims, share less private information, and verify unexpected requests through a channel you already trust.",
+      "Use AI to help you. Keep private details out, check important facts, and stay in charge of consequential actions.",
     sourceLinks: [
       {
         label: "NIST: Generative AI risk profile (PDF)",

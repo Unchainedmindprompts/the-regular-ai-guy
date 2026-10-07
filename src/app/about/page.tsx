@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Meet Mark Abplanalp",
   description:
-    "Meet Mark Abplanalp, the hands-on business owner and curious AI user behind The Regular AI Guy.",
+    "Meet Mark Abplanalp, host of The Regular AI Guy, a podcast about using AI in everyday life.",
   alternates: { canonical: "/about" },
 };
 export default function About() {
@@ -13,16 +13,11 @@ export default function About() {
     <main id="main-content">
       <section className="page-hero">
         <div className="container">
-          <span className="eyebrow">MEET THE GUY BEHIND THE MIC</span>
-          <h1>
-            A regular guy.
-            <br />
-            An open mind.
-            <br />A lot of questions.
-          </h1>
+          <span className="eyebrow">THE GUY BEHIND THE MIC</span>
+          <h1>Hi, I’m Mark.</h1>
           <p>
-            I’m Mark Abplanalp. I’m using AI, figuring out what works, and
-            sharing what I learn.
+            I use AI a lot. I’m still learning, and I want to share what I find
+            useful.
           </p>
         </div>
       </section>
@@ -40,46 +35,38 @@ export default function About() {
           </div>
           <div className="prose">
             <section>
-              <h2>
-                Hands-on work.
-                <br />
-                Hands-on learning.
-              </h2>
+              <h2>A little about me</h2>
               <p>
-                I run Luxe Window Works and install shades. I also spend a lot
-                of time using AI, building websites, and figuring out how these
-                tools can fit into real work and everyday life.
+                I run Luxe Window Works and install shades. I also use AI, build
+                websites, and spend a lot of time figuring out what these tools
+                can do.
               </p>
               <p>
-                That’s where The Regular AI Guy comes from. There’s a lot
-                happening with AI. I want to explore it with the same practical
-                question I’d bring to any tool: what can I actually do with
-                this?
+                The Regular AI Guy is where I’ll share what I’m learning, in
+                everyday language.
               </p>
             </section>
             <section>
-              <h2>What we’ll get into</h2>
+              <h2>There’s plenty to talk about.</h2>
               <p>
-                Useful tools for work and home. Personal agents. The data
-                centers behind the technology. Real risks, unlikely fears, and
-                possibilities worth exploring without pretending the outcome is
-                guaranteed.
+                Help with meals, family schedules, paperwork, trips, and work.
+                We’ll also get into things like personal agents, data centers,
+                and the risks worth understanding.
               </p>
               <p>
-                The show is for curious people from all kinds of backgrounds. If
-                you have a business to run, a job to do, a home to look after,
-                or simply a question about AI, you belong in the conversation.
+                Maybe you use AI already. Maybe you tried it and didn’t like it.
+                Either way, you’re welcome here.
               </p>
             </section>
             <section>
-              <h2>We’re just getting started.</h2>
+              <h2>The podcast is on the way.</h2>
               <p>
-                The podcast is in the making. There aren’t published episodes
-                here yet. In the meantime, you can explore the upcoming topics
-                and try the practical starter guides.
+                Episodes and listening links will be added when they’re ready.
+                For now, there are a few simple requests and short guides to
+                try.
               </p>
               <Link href="/start-here" className="text-link">
-                Let’s figure something out <ArrowUpRight size={18} />
+                Take a look <ArrowUpRight size={18} />
               </Link>
             </section>
           </div>
