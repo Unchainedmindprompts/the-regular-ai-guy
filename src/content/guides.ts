@@ -77,7 +77,7 @@ export const guides: Guide[] = [
     title: "Make one part of work easier",
     eyebrow: "EVERYDAY WORK",
     summary:
-      "Find a repeatable task worth trying, protect customer information, and measure whether AI actually helps.",
+      "Describe a job you want off your plate and ask an AI agent to help you get it done.",
     readTime: "3 min read",
     sections: [
       {
@@ -107,16 +107,18 @@ export const guides: Guide[] = [
         ],
       },
       {
-        title: "Count the checking time too",
+        title: "Start with something you want off your plate",
         body: [
-          "Try the same narrow task on a handful of examples. Record the time spent preparing the request, reviewing the output, and fixing it. Compare that total with doing the task yourself. A fast first draft is only useful if it leads to a dependable finished result.",
-          "Keep a short record of mistakes: missing items, invented details, awkward wording, or confusion about who does what. Adjust the prompt and test again. If the same important error keeps returning, narrow the job or stop using AI for that step.",
-          "When the trial helps, save the prompt, a clean example, and a simple review checklist together. Someone else should be able to repeat the process and understand its limits. Start with one dependable use before adding more.",
+          "Maybe customer details are scattered across texts, emails, and scraps of paper. You want one place to see who needs a quote, which jobs are booked, and who needs a follow-up. Start there: tell an AI agent what you want to accomplish.",
+          "You could say: “Help me build a simple customer and job tracker. My customer information is scattered across texts, email, and paper. I want to see each customer, what they need, the job status, and the next follow-up in one place. Ask me what you need to know and help me get it working.”",
+          "You don’t need to pick a database or map every step before asking. Explain what you want the finished tracker to do, what you already use, and any limits that matter. The agent can ask follow-up questions and help build a solution using the tools it supports. If it needs an app connection or a decision from you, ask it to explain what’s needed in everyday language.",
+          "As it takes shape, keep the conversation going: “Put the customers waiting for a quote at the top.” “Add a place for job photos.” “Make this easier to use on my phone.” You can ask for adjustments as you see what’s useful. The point is to get something working that takes a job off your plate.",
+          "Before adding real customers, check what information the tool stores and who can see it. Confirm the job dates before relying on any reminders.",
         ],
       },
     ],
     takeaway:
-      "Choose one repeat task, test it with safe sample information, and judge the time and quality of the finished result.",
+      "Start with what you want accomplished. Explain the result, let the agent ask questions, and work with it to make the result useful to you.",
     sourceLinks: [
       {
         label: "OpenAI: Data controls in ChatGPT",

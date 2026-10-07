@@ -84,3 +84,24 @@ test("first-prompt headline preserves the requested outcome-first wording", asyn
   const css = await readFile("src/app/globals.css", "utf8");
   assert.match(css, /\.prompt-context h2 \{[^}]*font-weight: 800;/);
 });
+
+test("work guide leads with accomplishing a goal rather than beginner benchmarking", () => {
+  const guide = getGuide("ai-at-work");
+  const section = guide.sections.find(
+    (section) =>
+      section.title === "Start with something you want off your plate",
+  );
+  assert.ok(section);
+  assert.match(
+    section.body.join(" "),
+    /Help me build a simple customer and job tracker/,
+  );
+  assert.match(
+    section.body.join(" "),
+    /Ask me what you need to know and help me get it working/,
+  );
+  assert.doesNotMatch(
+    [guide.summary, guide.takeaway, ...section.body].join(" "),
+    /Record the time|short record of mistakes|test again|review checklist|judge the time|measure whether/i,
+  );
+});
