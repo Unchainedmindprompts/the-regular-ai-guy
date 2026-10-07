@@ -42,13 +42,12 @@ export function PromptLab() {
     }
   }
   return (
-    <div className="prompt-lab">
+    <div className="prompt-lab" id="first-prompt">
       <div className="prompt-context">
         <span className="eyebrow">A SMALL PLACE TO START</span>
         <h2>
-          Try one thing.
-          <br />
-          See what happens.
+          You don’t need to know how to build the solution, just ask the right
+          questions.
         </h2>
         <p>
           You don’t need the perfect prompt. Start with a real task, add a few

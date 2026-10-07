@@ -69,3 +69,18 @@ test("production is indexable while preview headers remain noindex", async () =>
     else process.env.VERCEL_ENV = previous;
   }
 });
+
+test("first-prompt headline preserves the requested outcome-first wording", async () => {
+  const component = await readFile("src/components/prompt-lab.tsx", "utf8");
+  const heading = component
+    .match(/<h2>([\s\S]*?)<\/h2>/)?.[1]
+    .replace(/\s+/g, " ")
+    .trim();
+  assert.equal(
+    heading,
+    "You don’t need to know how to build the solution, just ask the right questions.",
+  );
+  assert.match(component, /id="first-prompt"/);
+  const css = await readFile("src/app/globals.css", "utf8");
+  assert.match(css, /\.prompt-context h2 \{[^}]*font-weight: 800;/);
+});
