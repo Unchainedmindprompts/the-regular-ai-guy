@@ -2147,7 +2147,7 @@ p {
 }
 @media (max-width: 375px) {
   .hero h1 {
-    font-size: 44px;
+    font-size: clamp(38px, 12vw, 44px);
   }
   .hero-eyebrow {
     font-size: 7px;

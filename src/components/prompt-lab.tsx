@@ -66,7 +66,7 @@ export function PromptLab() {
       <div className="prompt-paper">
         <div className="prompt-paper-header">
           <span>EXAMPLE REQUESTS</span>
-          <span aria-hidden="true">↗</span>
+          <ArrowUpRight aria-hidden="true" size={20} />
         </div>
         <div className="prompt-options" aria-label="Choose a prompt example">
           {samples.map((sample, i) => (
