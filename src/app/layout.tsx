@@ -23,6 +23,7 @@ export const metadata: Metadata = {
         url: "/images/social-cover.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "The Regular AI Guy with Mark Abplanalp. AI for work, home, and everything in between.",
       },
     ],
