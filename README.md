@@ -1,10 +1,10 @@
 # The Regular AI Guy
 
-A preview-only Next.js website for Mark Abplanalp’s upcoming practical AI podcast.
+The Next.js website for Mark Abplanalp’s upcoming practical AI podcast.
 
 ## Run locally
 
-Node 22 or newer (Vercel project currently uses Node 24).
+Node 22 or newer (Vercel project uses Node 24).
 
 ```sh
 npm ci
@@ -22,15 +22,18 @@ node tests/browser-qa.mjs
 
 Browser QA covers 1440, 768, 390 and 320 pixel widths, horizontal overflow, four topic tabs with keyboard navigation, prompt selection and clipboard copy, mobile menu open/close/Escape/navigation, back navigation, all content routes, canonical links, 404 handling and axe WCAG checks. Use `QA_BASE_URL` for an alternative server; use `CHROMIUM_PATH` for an installed browser.
 
-## Preview deployment safeguards
+The initial cloud shell could not launch Chromium, so the full automated browser suite was not run there. Hosted manual browser checks covered desktop and mobile layouts down to a 321-pixel CSS viewport, topic controls, menu dismissal/navigation, copy-success UI, all eight content routes, metadata, images, and in-page anchors. Local lint, typecheck, content tests and build passed. Production dependency audit was clean after updating sharp.
 
-- `main` was initialized with only `vercel.json`, automatic deployments disabled, and a deliberately failing build command
-- Website implementation lives on `preview/regular-ai-guy`
-- This branch enables automatic deployment only for its exact branch name
-- The build guard requires `VERCEL_ENV=preview`, otherwise it fails closed
-- `framework: nextjs` overrides the existing project’s “Other” preset for this branch
-- Preview pages send `noindex, nofollow` and a disallow-all robots file
-- Do not merge or promote this preview. A production release requires explicit approval and a deliberate change to deployment guards
+## Deployment
+
+- `main` is the approved production branch of the existing Vercel project `the-regular-ai-guy`
+- The production release was explicitly approved on October 7, 2026
+- Automatic deployment is enabled for `main` and `preview/regular-ai-guy`; other branches remain disabled by the configuration
+- `framework: nextjs` explicitly selects the correct framework
+- Production pages permit indexing; preview and local environments send noindex/nofollow and a disallow-all robots file
+- The original preview branch retains its preview-only guard until deliberately updated
+- Custom domain configuration and DNS are managed separately from the source code
+- No third-party service keys or environment secrets are required
 
 ## Content and media
 
@@ -42,11 +45,8 @@ Browser QA covers 1440, 768, 390 and 320 pixel widths, horizontal overflow, four
 - Website/PodcastSeries/Person JSON-LD matches visible content. Guides use Article schema. There are no PodcastEpisode or review records
 - Topic exploration and clipboard interactions are client-only. There is no backend or data collection integration
 
-## Before launch
+## When episodes are ready
 
-1. Review and approve copy, design, host biography and all four reading guides
-2. Supply actual episode audio and metadata, trailer and verified platform links when available
-3. Approve production deployment separately; confirm custom-domain/DNS status
-4. Review privacy disclosures before adding analytics, email signup, player embeds or other data collection
+Supply the real audio, episode metadata, trailer and verified listening-platform links. Review privacy disclosures before adding analytics, email signup, player embeds or other data collection.
 
 Content: `src/content/`. Pages: `src/app/`. Interactive components: `src/components/`.

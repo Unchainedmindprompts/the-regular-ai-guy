@@ -2,11 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "npm ci",
-  "buildCommand": "node scripts/preview-build.mjs",
+  "buildCommand": "npm run build",
   "git": {
     "deploymentEnabled": {
       "preview/regular-ai-guy": true,
-      "main": false,
+      "main": true,
       "*": false
     }
   }

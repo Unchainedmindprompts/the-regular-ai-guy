@@ -1,7 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { spawnSync } from "node:child_process";
 import ts from "typescript";
 const guideSource = await readFile("src/content/guides.ts", "utf8");
 const js = ts.transpileModule(guideSource, {
@@ -24,20 +23,13 @@ test("four distinct useful guides with valid source URLs", () => {
   }
   assert.equal(getGuide("missing"), undefined);
 });
-test("preview-only Vercel deployment policy", async () => {
+test("approved production and preview Vercel deployment policy", async () => {
   const config = JSON.parse(await readFile("vercel.json", "utf8"));
   assert.equal(config.framework, "nextjs");
-  assert.equal(config.git.deploymentEnabled.main, false);
+  assert.equal(config.git.deploymentEnabled.main, true);
+  assert.equal(config.buildCommand, "npm run build");
   assert.equal(config.git.deploymentEnabled["*"], false);
   assert.equal(config.git.deploymentEnabled["preview/regular-ai-guy"], true);
-  for (const env of ["production", "development", ""]) {
-    const result = spawnSync(process.execPath, ["scripts/preview-build.mjs"], {
-      env: { ...process.env, VERCEL_ENV: env },
-      encoding: "utf8",
-    });
-    assert.equal(result.status, 1);
-    assert.match(result.stderr, /Preview deployments only/);
-  }
 });
 test("no fabricated episode records or empty links", async () => {
   for (const file of [
@@ -50,5 +42,30 @@ test("no fabricated episode records or empty links", async () => {
       source,
       /PodcastEpisode|aggregateRating|<audio|href=["']#["']/,
     );
+  }
+});
+
+test("production is indexable while preview headers remain noindex", async () => {
+  const configSource = await readFile("next.config.ts", "utf8");
+  const configJs = ts.transpileModule(configSource, {
+    compilerOptions: { module: ts.ModuleKind.ESNext },
+  }).outputText;
+  const { default: config } = await import(
+    "data:text/javascript;base64," + Buffer.from(configJs).toString("base64")
+  );
+  const previous = process.env.VERCEL_ENV;
+  try {
+    for (const environment of ["production", "preview"]) {
+      process.env.VERCEL_ENV = environment;
+      const headers = (await config.headers())[0].headers;
+      const robotsHeader = headers.find(
+        (header) => header.key === "X-Robots-Tag",
+      );
+      assert.equal(Boolean(robotsHeader), environment !== "production");
+      if (robotsHeader) assert.equal(robotsHeader.value, "noindex, nofollow");
+    }
+  } finally {
+    if (previous === undefined) delete process.env.VERCEL_ENV;
+    else process.env.VERCEL_ENV = previous;
   }
 });

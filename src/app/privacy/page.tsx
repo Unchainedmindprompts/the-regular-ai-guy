@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "How this preview website handles information.",
+  description: "How this website handles information.",
   alternates: { canonical: "/privacy" },
 };
 export default function Privacy() {
@@ -13,9 +13,9 @@ export default function Privacy() {
         <section>
           <h2>A simple site, with a few useful tools.</h2>
           <p>
-            This version of The Regular AI Guy is a podcast website preview. It
-            has no accounts, email signup form, advertising trackers, embedded
-            podcast players, or AI chat connection.
+            This version of The Regular AI Guy is a podcast website. It has no
+            accounts, email signup form, advertising trackers, embedded podcast
+            players, or AI chat connection.
           </p>
           <p>
             The topic filters and prompt examples run in your browser. Clicking
