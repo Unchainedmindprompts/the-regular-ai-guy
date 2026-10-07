@@ -781,8 +781,8 @@ p {
   border-top: 1px solid #173f3a2b;
 }
 .prompt-section {
-  background: var(--navy);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--ink);
   padding-block: 94px;
 }
 .prompt-lab {
@@ -792,7 +792,7 @@ p {
   align-items: center;
 }
 .prompt-context > .eyebrow {
-  color: var(--cyan);
+  color: #476c69;
 }
 .prompt-context h2 {
   font-size: 52px;
@@ -802,13 +802,13 @@ p {
 }
 .prompt-context > p {
   max-width: 380px;
-  color: #bacbd0;
+  color: var(--muted);
   font-size: 15px;
   margin: 22px 0 25px;
 }
 .prompt-context > .text-link {
   font-size: 12px;
-  color: var(--cyan);
+  color: #285c51;
   max-width: 360px;
 }
 .prompt-reminder {
@@ -828,13 +828,13 @@ p {
   line-height: 1.7;
 }
 .prompt-paper {
-  background: #f6f4ea;
-  border: 1px solid #e8e4d6;
+  background: #fffdf7;
+  border: 1px solid #d7d8ce;
   color: var(--ink);
   padding: 27px 31px 20px;
   border-radius: 4px;
   transform: rotate(1deg);
-  box-shadow: 9px 11px 0 #d7e6d80a;
+  box-shadow: 9px 11px 0 #14252e08;
 }
 .prompt-paper-header {
   display: flex;

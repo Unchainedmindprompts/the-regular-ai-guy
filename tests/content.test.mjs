@@ -123,3 +123,12 @@ test("beginner entry points center everyday outcomes without homework", async ()
   );
   assert.match(body, /Ask me what you need to know/);
 });
+
+
+test("the example section stays warm neutral so the navy hero stands out", async () => {
+  const css = await readFile("src/app/globals.css", "utf8");
+  const section = css.match(/\.prompt-section \{([^}]+)\}/)?.[1];
+  assert.match(section, /background: var\(--cream\)/);
+  assert.match(section, /color: var\(--ink\)/);
+  assert.match(css, /\.hero \{[^}]*background: var\(--navy\)/);
+});
