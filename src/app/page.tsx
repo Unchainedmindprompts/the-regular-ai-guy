@@ -2,336 +2,389 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowDown,
   ArrowRight,
   ArrowUpRight,
-  AudioLines,
-  Lightbulb,
-  Wrench,
-  Compass,
   Check,
+  Code2,
+  Compass,
+  Mail,
+  Mountain,
+  Smartphone,
 } from "lucide-react";
-import { TopicExplorer } from "@/components/topic-explorer";
-import { PromptLab } from "@/components/prompt-lab";
 import { StructuredData } from "@/components/structured-data";
+import { contactHref, projects } from "@/content/work";
 export const metadata: Metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <>
       <StructuredData />
       <main id="main-content">
-        <section className="hero">
-          <div className="container hero-grid">
-            <div className="hero-copy">
-              <div className="hero-eyebrow">
-                <span className="status-dot" /> REAL LIFE. REAL QUESTIONS.
-                REALLY USEFUL AI.
-              </div>
+        <section className="service-hero">
+          <div className="service-hero-image">
+            <Image
+              src="/images/mark-mountain-hero.webp"
+              alt="Mark Abplanalp in his signature red flannel, with a mountain backdrop"
+              fill
+              preload
+              sizes="(max-width: 760px) 150vw, 85vw"
+            />
+          </div>
+          <div className="container service-hero-inner">
+            <div className="service-hero-copy">
+              <span className="eyebrow">
+                <span className="status-dot" /> A REGULAR GUY. BUILDING USEFUL
+                THINGS.
+              </span>
               <h1>
-                AI for work,
+                Websites for
                 <br />
-                home, and
+                service businesses.
                 <br />
                 <span>
-                  everything
-                  <br className="hero-break" /> in between.
+                  Built by someone
+                  <br />
+                  who runs one.
                 </span>
               </h1>
               <p>
-                A podcast for curious people with real things to do.
-                <br className="desktop-break" /> I’m Mark. I’m using this stuff,
-                figuring out what works, and sharing what I learn.
+                I’m Mark. I run Luxe Window Works, and I build websites that
+                help people understand your business, trust your work, and take
+                the next step.
               </p>
-              <div className="hero-actions">
-                <Link href="/start-here" className="button button-cyan">
-                  New to AI? Start here <ArrowUpRight size={20} />
+              <div className="service-actions">
+                <Link href="#work" className="button button-cyan">
+                  See my work <ArrowDown size={18} />
                 </Link>
-                <Link href="#explore" className="hero-secondary">
-                  Explore the topics <ArrowRight size={18} />
+                <Link href="#contact" className="button button-outline">
+                  Let’s talk <ArrowUpRight size={18} />
                 </Link>
               </div>
-              <div className="hero-note">
-                <AudioLines size={20} />
-                <span>
-                  The podcast is in the making. The curiosity starts now.
-                </span>
-              </div>
+              <p className="hero-footnote">
+                Owner to owner. Plain language. Hands-on from the start.
+              </p>
             </div>
-            <div className="hero-art">
-              <div className="art-orbit orbit-one" />
-              <div className="art-orbit orbit-two" />
-              <span className="art-cross cross-one" aria-hidden="true">
-                +
-              </span>
-              <span className="art-cross cross-two" aria-hidden="true">
-                +
-              </span>
-              <Image
-                src="/images/regular-ai-guy-logo.webp"
-                alt="The Regular AI Guy: illustrated Mark in a red plaid shirt beside a smiling robot wearing headphones"
-                width={1000}
-                height={1000}
-                preload
-                sizes="(max-width: 760px) 92vw, (max-width: 1100px) 47vw, 620px"
-                className="hero-logo"
-              />
-              <div className="art-note">
-                <span className="note-line" />
-                <span>
-                  A REGULAR GUY.
-                  <br />A WHOLE LOT OF CURIOSITY.
-                </span>
-              </div>
+            <div className="portrait-caption">
+              <span className="portrait-signature">Hey, I’m Mark.</span>
+              <span>BUSINESS OWNER · WEBSITE BUILDER · ALWAYS LEARNING</span>
             </div>
           </div>
         </section>
-        <div className="belief-strip">
+        <div className="service-strip">
           <div className="container">
             <span>
-              <Wrench size={17} /> Useful in the real world
+              <Compass size={18} /> A clear business story
             </span>
             <span>
-              <Lightbulb size={17} /> Explained in everyday language
+              <Smartphone size={18} /> Thoughtful on every screen
             </span>
             <span>
-              <Compass size={17} /> Room for a healthy dose of skepticism
+              <Check size={18} /> A useful next step
             </span>
           </div>
         </div>
-        <section className="section intro-section">
-          <div className="container intro-grid">
-            <div>
+
+        <section id="work" className="section work-section">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow">A FEW THINGS I’VE BUILT</span>
+                <h2>
+                  Real businesses.
+                  <br />
+                  Their own kind of website.
+                </h2>
+              </div>
+              <p>
+                Different people. Different work.
+                <br /> A website that feels like the business behind it.
+              </p>
+            </div>
+            <div className="work-grid">
+              {projects.map((project, index) => (
+                <a
+                  className={`work-card work-${project.id}`}
+                  key={project.id}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.name} website (opens in a new tab)`}
+                >
+                  <div className="work-preview">
+                    <div className="browser-bar" aria-hidden="true">
+                      <span className="browser-dots">● ● ●</span>
+                      <span>
+                        {new URL(project.url).hostname.replace("www.", "")}
+                      </span>
+                      <ArrowUpRight size={12} />
+                    </div>
+                    <div className="work-screen">
+                      <Image
+                        src={`/images/work-${project.id}.webp`}
+                        alt={`${project.name} live website homepage`}
+                        width={1400}
+                        height={710}
+                        sizes="(max-width:760px) 90vw, 44vw"
+                      />
+                    </div>
+                  </div>
+                  <div className="work-card-heading">
+                    <div>
+                      <span className="work-category">
+                        0{index + 1} / {project.category}
+                      </span>
+                      <h3>{project.name}</h3>
+                    </div>
+                    <span className="work-arrow">
+                      <ArrowUpRight size={23} />
+                    </span>
+                  </div>
+                  <p>{project.description}</p>
+                  <span className="work-status">
+                    {project.status} <span aria-hidden="true">↗</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="approach" className="section service-offer">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow">
+                  MAKE YOUR BUSINESS EASY TO CHOOSE
+                </span>
+                <h2>
+                  A good website does
+                  <br />
+                  more than look good.
+                </h2>
+              </div>
+              <p>
+                It answers the questions your customers already have.
+                <br /> And makes getting in touch feel straightforward.
+              </p>
+            </div>
+            <div className="offer-grid">
+              <article>
+                <span className="offer-number">01</span>
+                <h3>Tell your story clearly.</h3>
+                <p>
+                  What you do, who you help, and where you work. Written in the
+                  words your customers use, with your personality still in it.
+                </p>
+              </article>
+              <article>
+                <span className="offer-number">02</span>
+                <h3>Give people a reason to trust.</h3>
+                <p>
+                  Show your actual work, your experience, and the people behind
+                  the business. Help visitors see why you might be a good fit.
+                </p>
+              </article>
+              <article>
+                <span className="offer-number">03</span>
+                <h3>Make the next step easy.</h3>
+                <p>
+                  A clear way to call, ask a question, or request a
+                  consultation. Designed to work on a phone, between all the
+                  other things in someone’s day.
+                </p>
+              </article>
+            </div>
+            <div className="offer-bottom">
+              <span>
+                <Code2 size={20} /> Thoughtful design. Clear content. A
+                practical foundation.
+              </span>
+              <Link href="#contact" className="text-link">
+                Tell me what you have in mind <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="section owner-section">
+          <div className="container owner-grid">
+            <div className="owner-photo">
+              <Image
+                src="/images/mark-original.webp"
+                alt="Mark Abplanalp, owner of Luxe Window Works"
+                width={1024}
+                height={1536}
+                sizes="(max-width:760px) 90vw, 35vw"
+              />
+              <div className="owner-label">
+                <Mountain size={23} />
+                <span>
+                  ROOTED IN NORTH IDAHO.
+                  <br />
+                  CURIOUS ABOUT WHAT’S NEXT.
+                </span>
+              </div>
+            </div>
+            <div className="owner-copy">
               <span className="eyebrow">
-                YOU DON’T HAVE TO HAVE IT ALL FIGURED OUT
+                THE REGULAR GUY BEHIND THE WEBSITE
               </span>
               <h2>
-                That’s kind of
+                I know what it’s like
                 <br />
-                the whole point.
+                to have a business
+                <br />
+                <em>to get back to.</em>
               </h2>
-            </div>
-            <div className="intro-copy">
-              <p className="lead">
-                AI is showing up everywhere. Let’s figure out where it actually
-                fits in your life.
+              <p className="owner-lead">
+                Quoting jobs. Talking with customers. Getting the details right.
+                That’s my world, too.
               </p>
               <p>
-                On the job, running a business, at the kitchen table. We’ll get
-                into practical tools, big changes, honest questions, and the
-                stuff worth being careful about. Bring your experience. Bring
-                your skepticism. There’s room for both.
+                I run Luxe Window Works and have worked in window treatments
+                since 2002. Building trust matters when someone invites you into
+                their home. I bring that same care to how a business shows up
+                online.
+              </p>
+              <p>
+                I’m self-taught in AI and website building. I learn by doing,
+                asking questions, and putting the tools to work on real
+                projects. You work directly with me, from the first conversation
+                through the details.
               </p>
               <Link href="/about" className="text-link">
-                Meet the regular guy behind the mic <ArrowUpRight size={19} />
+                A little more about me <ArrowUpRight size={19} />
               </Link>
             </div>
           </div>
         </section>
-        <section id="explore" className="section explore-section">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow">FOLLOW YOUR CURIOSITY</span>
-                <h2>What’s on your mind?</h2>
-              </div>
-              <p>
-                Four ways into the conversation.
-                <br />
-                Plenty to figure out together.
-              </p>
-            </div>
-            <TopicExplorer />
-            <div className="upcoming-note">
-              <span className="status-dot dark-dot" />
-              <p>
-                These are topics we’re exploring for the show. Episodes and
-                listening links will appear here when they’re ready.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="section start-section">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow">NO EXPERIENCE REQUIRED</span>
-                <h2>A good place to begin.</h2>
-              </div>
-              <Link href="/start-here" className="text-link">
-                See the starter guide <ArrowRight size={19} />
-              </Link>
-            </div>
-            <div className="guide-grid">
-              <Link
-                href="/guides/first-useful-prompt"
-                className="guide-card card-cyan"
-              >
-                <div className="guide-card-top">
-                  <span>01 / GET STARTED</span>
-                  <ArrowUpRight size={25} />
-                </div>
-                <div
-                  className="guide-illustration prompt-illustration"
-                  aria-hidden="true"
-                >
-                  <div className="mini-prompt">
-                    <span>Help me with...</span>
-                    <div />
-                    <div />
-                    <b>↗</b>
-                  </div>
-                  <span className="pencil-stroke" />
-                </div>
-                <h3>
-                  Your first useful
-                  <br />
-                  AI conversation.
-                </h3>
-                <p>
-                  Pick a small task. Give it some context.
-                  <br />
-                  Learn by giving it a try.
-                </p>
-                <span className="guide-card-link">
-                  Read the guide <ArrowRight size={17} />
-                </span>
-              </Link>
-              <Link
-                href="/guides/personal-agents"
-                className="guide-card card-peach"
-              >
-                <div className="guide-card-top">
-                  <span>02 / UNDERSTAND THE TOOLS</span>
-                  <ArrowUpRight size={25} />
-                </div>
-                <div
-                  className="guide-illustration agent-illustration"
-                  aria-hidden="true"
-                >
-                  <span className="agent-node">
-                    <Check size={23} />
-                  </span>
-                  <span className="agent-line" />
-                  <span className="agent-node main-agent">
-                    <AudioLines size={39} />
-                  </span>
-                  <span className="agent-line" />
-                  <span className="agent-node">?</span>
-                  <span className="agent-caption">YOU’RE IN THE LOOP</span>
-                </div>
-                <h3>
-                  So, what exactly
-                  <br />
-                  is an AI agent?
-                </h3>
-                <p>
-                  A plain-language look at tools that can
-                  <br />
-                  help take a next step.
-                </p>
-                <span className="guide-card-link">
-                  Read the guide <ArrowRight size={17} />
-                </span>
-              </Link>
-              <Link
-                href="/guides/risks-and-reality"
-                className="guide-card card-lilac"
-              >
-                <div className="guide-card-top">
-                  <span>03 / KEEP YOUR HEAD</span>
-                  <ArrowUpRight size={25} />
-                </div>
-                <div
-                  className="guide-illustration reality-illustration"
-                  aria-hidden="true"
-                >
-                  <div className="reality-sheet">
-                    <span>LOOK CLOSER</span>
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <div className="magnifier">
-                    <Check size={24} />
-                  </div>
-                </div>
-                <h3>
-                  Stay curious.
-                  <br />
-                  Stay in control.
-                </h3>
-                <p>
-                  Real risks, useful boundaries,
-                  <br />
-                  and a few good habits.
-                </p>
-                <span className="guide-card-link">
-                  Read the guide <ArrowRight size={17} />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="section prompt-section">
-          <div className="container">
-            <PromptLab />
-          </div>
-        </section>
-        <section className="section host-section">
-          <div className="container host-grid">
-            <div className="host-graphic">
-              <div className="host-number" aria-hidden="true">
-                Hey.
-              </div>
-              <div className="host-stamp">
-                <AudioLines size={26} />
-                <span>
-                  HANDS-ON WORK.
-                  <br />
-                  OPEN-MINDED THINKING.
-                </span>
-              </div>
-            </div>
-            <div className="host-copy">
-              <span className="eyebrow">YOUR HOST, MARK ABPLANALP</span>
-              <h2>
-                I work with my hands.
-                <br />
-                And I’m putting AI
-                <br />
-                to work, too.
-              </h2>
-              <p>
-                I run Luxe Window Works and install shades. I also spend a lot
-                of time using AI, building websites, and figuring out what these
-                tools can actually do.
-              </p>
-              <p>
-                The Regular AI Guy is where I bring that curiosity. Practical
-                uses, bigger questions, and lessons from trying things for real.
-              </p>
-              <Link className="button button-dark" href="/about">
-                A little more about me <ArrowUpRight size={18} />
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="closing-section">
-          <div className="container closing-inner">
+
+        <section className="section foundation-section">
+          <div className="container foundation-grid">
             <div>
-              <span className="eyebrow">LET’S MAKE THIS USEFUL</span>
+              <span className="eyebrow">
+                A USEFUL FOUNDATION FOR WHAT’S NEXT
+              </span>
               <h2>
-                You bring the real life.
+                Clear for people.
                 <br />
-                We’ll explore the AI.
+                Organized for search.
+                <br />
+                <span>Open to useful AI.</span>
               </h2>
             </div>
-            <Link
-              className="round-link"
-              href="/start-here"
-              aria-label="Start exploring AI"
-            >
-              <ArrowUpRight size={48} />
-            </Link>
+            <div className="foundation-copy">
+              <p>
+                Your website comes first. Clear services, useful pages,
+                consistent business details, and structured information give
+                search engines and AI tools a better picture of what you do.
+              </p>
+              <p>
+                Beyond the website, I can help you think through practical uses
+                for AI: organizing information, drafting everyday content, or
+                improving a repetitive task. We start with a real need and
+                decide what’s worth trying.
+              </p>
+              <p className="foundation-note">
+                No guaranteed rankings or magic lead promises. Just useful work,
+                clear expectations, and room to improve.
+              </p>
+              <Link href="/start-here" className="text-link">
+                Explore the practical AI guides <ArrowUpRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="section process-section">
+          <div className="container process-grid">
+            <div>
+              <span className="eyebrow">HERE’S HOW WE START</span>
+              <h2>
+                A conversation.
+                <br />A clear plan.
+                <br />
+                Something you can see.
+              </h2>
+              <Link href="#contact" className="text-link">
+                Let’s talk about your website <ArrowRight size={18} />
+              </Link>
+            </div>
+            <ol className="process-list">
+              <li>
+                <span>01</span>
+                <div>
+                  <h3>Tell me about your business.</h3>
+                  <p>
+                    What you do, who you serve, and what isn’t working with your
+                    website today.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <h3>Agree on the useful stuff.</h3>
+                  <p>
+                    We define the pages, content, features, timing, and cost
+                    before the build begins.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <h3>Review it before it goes live.</h3>
+                  <p>
+                    You get a working preview to explore. We refine the details
+                    together, then launch when you’re ready.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="contact" className="contact-section">
+          <div className="container contact-inner">
+            <div>
+              <span className="eyebrow">
+                NO NEED TO HAVE IT ALL FIGURED OUT
+              </span>
+              <h2>
+                Let’s build something
+                <br />
+                <span>that feels like your business.</span>
+              </h2>
+              <p>
+                Have a website that needs work? Starting from scratch?
+                <br /> Send me a little about your business and what you’re
+                thinking.
+              </p>
+              <a className="button button-cyan" href={contactHref}>
+                Email Mark <Mail size={19} />
+              </a>
+              <a className="contact-email" href={contactHref}>
+                mark@luxewindowworks.com
+              </a>
+              <span className="contact-note">
+                That’s my Luxe inbox. Website questions are welcome there, too.
+              </span>
+            </div>
+            <div className="contact-aside">
+              <Image
+                src="/images/regular-ai-guy-logo.webp"
+                alt="The original Regular AI Guy artwork with Mark and his friendly robot sidekick"
+                width={190}
+                height={190}
+                sizes="190px"
+              />
+              <p>
+                Same regular guy.
+                <br />A different set of tools.
+              </p>
+            </div>
           </div>
         </section>
       </main>

@@ -39,6 +39,24 @@ for (const viewport of [
   if (viewport.width === 1440 || viewport.width === 390) {
     await page.screenshot({ path: `qa-artifacts/hero-${viewport.width}.png` });
   }
+  await page.getByRole("link", { name: "See my work", exact: true }).click();
+  assert.equal(new URL(page.url()).hash, "#work");
+  assert.equal(await page.locator(".work-card").count(), 4);
+  assert.match(
+    await page
+      .getByRole("link", { name: "Email Mark", exact: true })
+      .getAttribute("href"),
+    /^mailto:mark@luxewindowworks.com/,
+  );
+  const homeAxe = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+    .analyze();
+  results.push({
+    viewport,
+    path: "/",
+    accessibilityViolations: homeAxe.violations,
+  });
+  await page.goto(baseURL + "/explore", { waitUntil: "networkidle" });
   await page.getByRole("tab", { name: "Everyday life" }).click();
   assert.match(
     await page.getByRole("tabpanel").innerText(),
@@ -102,9 +120,9 @@ for (const viewport of [
     await page.getByRole("button", { name: "Open menu", exact: true }).click();
     await page
       .getByRole("navigation", { name: "Mobile navigation" })
-      .getByRole("link", { name: "Start here" })
+      .getByRole("link", { name: "Meet Mark", exact: true })
       .click();
-    await page.waitForURL("**/start-here");
+    await page.waitForURL("**/about");
     assert.equal(
       await page
         .getByRole("navigation", { name: "Mobile navigation" })
@@ -112,7 +130,7 @@ for (const viewport of [
       false,
     );
     await page.goBack();
-    await page.waitForURL(baseURL + "/");
+    await page.waitForURL(baseURL + "/explore");
   }
   const axe = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])

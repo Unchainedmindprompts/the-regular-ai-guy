@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
     "/start-here",
+    "/explore",
     "/about",
     "/privacy",
     ...guides.map((g) => `/guides/${g.slug}`),
