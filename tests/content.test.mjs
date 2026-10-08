@@ -30,6 +30,10 @@ test("approved production and preview Vercel deployment policy", async () => {
   assert.equal(config.buildCommand, "npm run build");
   assert.equal(config.git.deploymentEnabled["*"], false);
   assert.equal(config.git.deploymentEnabled["preview/regular-ai-guy"], true);
+  assert.equal(
+    config.git.deploymentEnabled["preview/service-business-design"],
+    true,
+  );
 });
 test("no fabricated episode records or empty links", async () => {
   for (const file of [

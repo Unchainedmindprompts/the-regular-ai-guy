@@ -13,9 +13,10 @@ export default function Privacy() {
         <section>
           <h2>A simple site, with a few useful tools.</h2>
           <p>
-            This version of The Regular AI Guy is a podcast website. It has no
-            accounts, email signup form, advertising trackers, embedded podcast
-            players, or AI chat connection.
+            The Regular AI Guy is a website-building service with practical AI
+            guides and a podcast in the making. It has no accounts, email signup
+            form, advertising trackers, embedded podcast players, or AI chat
+            connection.
           </p>
           <p>
             The topic filters and prompt examples run in your browser. Clicking
@@ -39,8 +40,9 @@ export default function Privacy() {
             for its practices.
           </p>
           <p>
-            The reading guides link to external resources. When you open one,
-            that website’s own privacy practices apply.
+            The portfolio and reading guides link to external websites. Email
+            links open your email app so you can contact Mark directly. When you
+            open an external site, that website’s own privacy practices apply.
           </p>
         </section>
         <section>

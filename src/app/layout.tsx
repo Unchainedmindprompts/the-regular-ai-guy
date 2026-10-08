@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/manrope";
 import "./globals.css";
+import "./service-design.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "The Regular AI Guy | AI for Work, Home & Everyday Life",
+    default: "The Regular AI Guy | Websites for Service Businesses",
     template: "%s | The Regular AI Guy",
   },
   description: site.description,
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "The Regular AI Guy with Mark Abplanalp. AI for work, home, and everything in between.",
+        alt: "The Regular AI Guy with Mark Abplanalp and a friendly robot.",
       },
     ],
   },

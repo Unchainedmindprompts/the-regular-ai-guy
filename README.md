@@ -1,6 +1,8 @@
 # The Regular AI Guy
 
-The Next.js website for Mark Abplanalp’s upcoming practical AI podcast.
+The Next.js website for Mark Abplanalp’s website-building service and practical AI resources.
+
+This branch contains a service-business design preview. See [PREVIEW.md](PREVIEW.md) for the production base, rollback instructions, asset provenance, and verification.
 
 ## Run locally
 
@@ -28,7 +30,7 @@ The initial cloud shell could not launch Chromium, so the full automated browser
 
 - `main` is the approved production branch of the existing Vercel project `the-regular-ai-guy`
 - The production release was explicitly approved on October 7, 2026
-- Automatic deployment is enabled for `main` and `preview/regular-ai-guy`; other branches remain disabled by the configuration
+- Automatic deployment is enabled for `main`, `preview/regular-ai-guy`, and `preview/service-business-design`; other branches remain disabled by the configuration
 - `framework: nextjs` explicitly selects the correct framework
 - Production pages permit indexing; preview and local environments send noindex/nofollow and a disallow-all robots file
 - The original preview branch retains its preview-only guard until deliberately updated

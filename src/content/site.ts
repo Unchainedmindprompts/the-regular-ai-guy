@@ -3,7 +3,7 @@ export const site = {
   // Keep metadata on the reachable public origin until the custom domain is connected.
   url: "https://the-regular-ai-guy.vercel.app",
   description:
-    "AI for work, home, and everything in between. A practical podcast in the making with Mark Abplanalp, plus plain-language guides you can use today.",
+    "Websites for service businesses, built by someone who runs one. Work directly with Mark Abplanalp on a clear, personal website and practical AI guidance.",
   host: "Mark Abplanalp",
 };
 export const topicGroups = [

@@ -6,6 +6,7 @@
   "git": {
     "deploymentEnabled": {
       "preview/regular-ai-guy": true,
+      "preview/service-business-design": true,
       "main": true,
       "*": false
     }
