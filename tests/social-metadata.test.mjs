@@ -13,10 +13,10 @@ const { site } = await import(
 );
 
 test("social metadata uses the verified public production host", () => {
-  assert.equal(site.url, "https://the-regular-ai-guy.vercel.app");
+  assert.equal(site.url, "https://theregularaiguy.com");
   assert.equal(
     new URL("/images/social-cover.jpg", site.url).toString(),
-    "https://the-regular-ai-guy.vercel.app/images/social-cover.jpg",
+    "https://theregularaiguy.com/images/social-cover.jpg",
   );
 });
 

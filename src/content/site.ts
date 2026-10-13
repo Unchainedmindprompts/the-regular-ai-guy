@@ -1,7 +1,7 @@
 export const site = {
   name: "The Regular AI Guy",
-  // Keep metadata on the reachable public origin until the custom domain is connected.
-  url: "https://the-regular-ai-guy.vercel.app",
+  // Use the verified custom domain for all absolute site and metadata URLs.
+  url: "https://theregularaiguy.com",
   description:
     "AI for work, home, and everything in between. A practical podcast in the making with Mark Abplanalp, plus plain-language guides you can use today.",
   host: "Mark Abplanalp",
